@@ -1,0 +1,34 @@
+<div ng-controller="editController" style="position: absolute;bottom: 2px;">
+	<div class="left-align">
+		<div>{{itemToShow.p_name}}</div>
+		<div><sup>{{itemToShow.c_currency}}</sup>{{itemToShow.p_price}}</div>
+		<div>{{itemToShow.p_variation}}</div>
+		<div class="color-box">
+			<span ng-repeat="color in itemToShow.p_available_options.colors">
+				<canvas class="box-color" style="background-color: {{color.name}};">
+			</span>
+		</div>
+		<div class="size-qty-dd">
+			<span class="dropdown">
+			    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{initSize}}
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li ng-repeat="size in itemToShow.p_available_options.sizes"><a ng-click="sizeSelect(size.name)">{{size.name}}</a></li>
+			    </ul>
+			</span>
+			<span class="dropdown">
+			    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">QTY : {{itemToShow.p_quantity}}
+			    <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+			      <li>{{itemToShow.p_quantity}}</li>
+			    </ul>
+			</span>
+		</div>
+		<div>
+			<button type="button" class="btn btn-primary" ng-click="editItem(itemToShow)">EDIT</button>
+		</div>
+	</div>
+	<div class="right-align">
+		 <img src="/app/css/images/T{{itemToShow.p_id}}.jpg">
+	</div>
+</div>

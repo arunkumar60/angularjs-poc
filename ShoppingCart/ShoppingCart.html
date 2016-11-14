@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="shoppingApp">
+<head>
+    <title>Shopping Cart</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="app/css/common.css" rel="stylesheet" />
+    <link href="app/css/shoppingCartStyles.css" rel="stylesheet" />
+    <link href="app/css/home.css" rel="stylesheet" />
+    <link href="app/css/edit.css" rel="stylesheet" />
+</head>
+<body class="{{mask}}">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand " href="#/home">
+                    <img src="app/css/images/shop.png" class="brand-ico"> YOUR SHOPPING BAG
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a 
+         custom directive -->
+    <!-- <div animated-view></div> -->
+    <div ng-view></div>
+
+    <div id="footer">
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer>
+                        <div class="row">
+                            <div class="span4">
+                                Created by Arun Kumar
+                            </div>
+                            <div class="span4">
+                                Facebook: <a href="http://facebook.com/">@Arun</a>
+                            </div>
+                        </div>
+                   </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/jquery.min.js"></script>
+
+    <!-- UI Libs -->
+    <script src="Scripts/bootstrap.js"></script>
+
+
+    <!-- App libs -->
+    <script src="app/app.js"></script>
+    <script src="app/services/cartService.js"></script>
+    <!--Controllers -->
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/editController.js"></script>
+    <!--Directives -->
+    <script src="app/directives/editPopup.js"></script>    
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<div class="container-item" ng-controller="homeController">
+    <table class="table table-hover" >
+      <thead>
+        <tr class="">
+            <th>{{itemLength}} ITEMS</th>
+            <th>DESCRIPTION</th>
+            <th>SIZE</th>
+            <th>QTY</th>
+            <th>PRICE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="items in itemDetails">
+            <th>
+                <div>
+                    <img src="/app/css/images/T{{items.p_id}}.jpg">
+                <div>
+            </th>
+            <td>
+                <div>
+                    <div>
+                        <div class="uppercase font-bold">{{items.p_variation}} {{items.p_name}}</div>
+                        <div>Style #: <span class="uppercase">{{items.p_style}}</span></div>
+                        <div>Colour: <span class="first-char-upper">{{items.p_selected_color.name}}</span></div>
+                    </div>
+                    <div class="selection-section "> 
+                        <span class="pointer" id="{{items.p_id}}" ng-click="editClick(items)">EDIT</span>
+                        <span class="pointer">| &times; REMOVE |</span>
+                        <span class="pointer"> SAVE FOR LATER</span>
+                    </div>
+                <div>
+            </td>
+            <td>{{items.p_selected_size.code}}</td>
+            <td>{{items.p_quantity}}</td>
+            <td><sup>{{items.c_currency}}</sup>{{items.p_price}}</td>
+        </tr>
+       </tbody>
+    </table>
+    <div edit-popup ng-show="editHideShow"></div>
+</div>

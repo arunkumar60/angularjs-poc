@@ -3,10 +3,27 @@
 	height: 10px;
 	border:1px solid #000000;
 }
-
 .close-btn{
 	position: absolute;
-    left: 95%;
+    left: 94%;
     font-size: 40px;
     color: lightgrey;
+    top: 10px;
+}
+.edit-container{
+	position:absolute;
+    top: 4%;
+    left: 30%;
+    width:30em;
+    height:20em;
+    margin-top: 9em;
+    border: 1px solid #ccc;
+    background-color: white;
+    z-index: 10;
+}
+.edit-details{
+	margin-top: 40px;
+}
+.align-details-section{
+	padding-left: 30px;
 }

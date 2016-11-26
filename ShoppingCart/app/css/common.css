@@ -30,3 +30,9 @@ a.diasble-underline{
 	top: 0;
 	opacity: 0.4;
 }
+.mask-disable{
+	display: none;
+}
+.text-center{
+	text-align: center;
+}

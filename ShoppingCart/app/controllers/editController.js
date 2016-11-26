@@ -4,7 +4,7 @@ app.controller('editController', function ($scope,$rootScope) {
     // Keeps things in one place
     init();
     function init() {
-        $scope.initSize = "Select";
+        $rootScope.initSize = "Select";
     };
     $rootScope.$on("EditPageDetails", function(event,itemSelAllDetail){
         $scope.showDetails(itemSelAllDetail);
@@ -13,15 +13,19 @@ app.controller('editController', function ($scope,$rootScope) {
         $scope.itemToShow = itemSelDetail;
     };
     $scope.sizeSelect = function(seleVal){
-        $scope.initSize = seleVal;
+        $rootScope.initSize = seleVal;
     };
     $scope.editItem = function(itemToEdit){
         var editDetial = [];
         editDetial.push({
             "itemToEdit" : itemToEdit,
-            "sizeEdit" : $scope.initSize
+            "sizeEdit" : $rootScope.initSize
         });
         $rootScope.$emit("EditItemDetails", editDetial);
+    };
+    $scope.closePopup = function(){
+       $rootScope.editHideShow = false;
+       $rootScope.initSize = "Select";
     };
 });
 

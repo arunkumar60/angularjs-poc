@@ -8,10 +8,10 @@ app.controller('homeController', function ($scope,cartService,$rootScope) {
     function init() {
     	$scope.itemDetails = cartService.getProducts();
     	$scope.itemLength = $scope.itemDetails.length;
-    	$scope.editHideShow = false;
+    	$rootScope.editHideShow = false;
     };
      $scope.editClick = function(p_selected){
-     	$scope.editHideShow = true;
+     	$rootScope.editHideShow = true;
     	// $rootScope.mask = 'mask-enable';
     	$rootScope.$emit("EditPageDetails", p_selected);
     };
@@ -35,6 +35,9 @@ app.controller('homeController', function ($scope,cartService,$rootScope) {
             size = "xl" ;
         }
         $scope.itemDetails[indexOfEditItem].p_selected_size.code = size;
+        $rootScope.editHideShow = false;
+        $rootScope.initSize = "Select";
     });
+
 });
 

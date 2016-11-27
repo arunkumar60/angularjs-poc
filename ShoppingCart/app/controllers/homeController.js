@@ -12,7 +12,7 @@ app.controller('homeController', function ($scope,cartService,$rootScope) {
     };
      $scope.editClick = function(p_selected){
      	$rootScope.editHideShow = true;
-    	// $rootScope.mask = 'mask-enable';
+    	$rootScope.mask = 'mask-enable';
     	$rootScope.$emit("EditPageDetails", p_selected);
     };
     $rootScope.$on("EditItemDetails", function(event,editItem){
